@@ -49,12 +49,16 @@ if(!function_exists('blargo_generate_styles')) {
         $colors['base'] = array (
             'nav_bg' => '#2275bb',
             'nav_font_color' => '#ffffff',
+            'nav_font_size_px' => '15',
+            'nav_active_bg' => '#1e67a5',
             'meta_font_color' => '#333333',
             'nav_sep' => '#1e67a5',
             'widget_header_bg' => '#2275bb',
             'widget_header_font_color' => '#ffffff',
             'content_font_color' => '#333333',
             'link_color' => '#2275bb',
+            'link_color_hover' => '#368fda',
+            'link_font_color_hover' => '#fff',
             'font_size_px' => '19.5',
             'custom' => '',            
         );
@@ -66,12 +70,61 @@ if(!function_exists('blargo_generate_styles')) {
         $colors['blargo'] = array (
             'widget_header_bg' => 'transparent',
             'widget_header_font_color' => '#333333',
+            'nav_sep' => '#111',
+            'nav_bg' => '#333333',
             'font_size_px' => '16',
+            'link_color' => '#333333',
+            'link_color_hover' => '#368fda',
+            'nav_font_size_px' => '17',
+            'custom' => "
+                .widgettitle, .stories h3.widgettitle { border: none; }
+            ");
+
+        $colors['gray'] = array (
+            'widget_header_bg' => 'transparent',
+            'widget_header_font_color' => '#333333',
+            'nav_sep' => '#111',
+            'nav_bg' => '#333333',
+            'font_size_px' => '16',
+            'link_color' => '#333333',
+            'nav_active_bg' => '#555555',
+            'link_color_hover' => '#555',
+            'nav_font_size_px' => '17',
             'custom' => "
                 .widgettitle, .stories h3.widgettitle { border: none; }
             ",
         );
         
+        $colors['red'] = array (
+            'widget_header_bg' => 'transparent',
+            'widget_header_font_color' => '#333333',
+            'nav_sep' => '#111',
+            'nav_bg' => '#333333',
+            'nav_active_bg' => '#ff0000',
+            'font_size_px' => '18',
+            'nav_font_size_px' => '17',
+            'link_color' => '#333333',
+            'link_color_hover' => '#555',
+            'custom' => "
+                .widgettitle, .stories h3.widgettitle { border: none; }
+            ",
+        );
+        
+        $colors['yellow'] = array (
+            'widget_header_bg' => 'transparent',
+            'widget_header_font_color' => '#333333',
+            'nav_sep' => '#111',
+            'nav_bg' => '#333333',
+            'nav_active_bg' => '#fcc71f',
+            'font_size_px' => '19.5',
+            'nav_font_size_px' => '17',
+            'link_color' => '#333333',
+            'link_color_hover' => '#555',
+            'custom' => "
+                .widgettitle, .stories h3.widgettitle { border: none; }
+            ",
+        );
+                
         $set = isset($colors[$scheme]) ? $colors[$scheme] : $colors['base'];
         
         # Inherit from the base color set
@@ -79,9 +132,13 @@ if(!function_exists('blargo_generate_styles')) {
             if(!isset($set[$key])) $set[$key] = $val;
             
         return "
+            .navbar ul { font-size: {$set['nav_font_size_px']}px; }
+            a { color: {$set['link_color']}; }
+            a:hover { color: {$set['link_color_hover']}; }
             .navbar-inner { background-color: {$set['nav_bg']}; }
             .navbar > li > a { color: {$set['nav_font_color']}; }    
-            .navbar .divider-vertical {background-color: {$set['nav_sep']}; }    
+            .navbar .divider-vertical {background-color: {$set['nav_sep']}; border-left: {$set['nav_sep']}; }    
+            .navbar li>a:hover, .navbar .active > a, .navbar .active > a:hover { color: {$set['link_font_color_hover']}; background-color: {$set['nav_active_bg']}; }
             .byline .time-ago, .byline .edit-link a { color: {$set['meta_font_color']}; }
             a { color: {$set['link_color']}; }    
             p { font-size: {$set['font_size_px']}px; color: {$set['content_font_color']} }
@@ -91,6 +148,7 @@ if(!function_exists('blargo_generate_styles')) {
             #blargo-header-ad { position: absolute; right: 10px; top: 30px; }
             @media (max-width: 900px) { #blargo-header-ad { display:none; position: static; right: 0; top: 0; display: block; padding: 10px; text-align: left; } }
             .blargo-monster-ad > .blargo-zone { display: block; background-color: #222; }
+            .footer-credit { display: none; }
             {$set['custom']}
             
         ";

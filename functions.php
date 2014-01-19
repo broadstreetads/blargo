@@ -210,7 +210,7 @@ function blargo_broadstreet_cdn()
  */
 if ( ! function_exists( 'largo_header' ) ) {
 	function largo_header() {
-                
+        
         if (of_get_option('monster_ad')) {
             echo '<span class="blargo-monster-ad">';
             dynamic_sidebar('monster-ad-spot');
@@ -270,5 +270,15 @@ register_sidebar(array(
   'after_widget'  => ''
 ));
 
+function blargo_like_button($content) {
+    if(trim(of_get_option('post_like_button')) && is_single())
+    {
+        $content .= '<div class="fb-like-box" data-href="'.of_get_option('post_like_button').'" data-width="500" data-show-faces="false" data-border-color="#ccc" data-stream="false" data-header="false"></div>';
+    }
+
+    return $content;
+}
+
+#add_filter('the_content', 'blargo_like_button', 1); 
 add_action('wp_head', 'blargo_generate_styles');
 add_action('init', 'blargo_broadstreet_cdn');

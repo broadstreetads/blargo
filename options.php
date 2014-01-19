@@ -461,10 +461,10 @@ function optionsframework_options() {
 
 	$color_options = array(
 		'blue' 	=> __('Largo Blue (Default)', 'largo'),
-        'blargo'=> __('Blargo Blue (Default)', 'largo'),
+        'blargo'=> __('Blargo Blue', 'largo'),
 		'gray' 	=> __('Dark Gray', 'largo'),
 		'red' 	=> __('Red', 'largo'),
-		'Yellow'=> __('Yellow', 'largo')
+		'yellow'=> __('Yellow', 'largo')
 	);
     
 	$font_options = array(
@@ -515,7 +515,15 @@ function optionsframework_options() {
 		'type'		=> 'select',
 		//'class'		=> 'mini',
 		'options' 	=> $color_options);
-    
+    /*
+    $options[] = array(
+        'name'      => 'Extras',
+		'desc' 		=> __('Enter your Facebook page URL for a like button that will follow every post. Very useful for boosting your organization\'s like count.', 'largo'),
+		'id' 		=> 'post_like_button',
+		'std' 		=> '',
+		'type'		=> 'text');
+    */
+    /*
 	$options[] = array(
         'name'      => 'Font Set',
 		'desc' 		=> __('What would you like your fonts to be?', 'largo'),
@@ -524,7 +532,8 @@ function optionsframework_options() {
 		'type'		=> 'select',
 		//'class'		=> 'mini',
 		'options' 	=> $font_options);
-
+    */
+    
 	$options[] = array(
 		'name' 	=> __('Advanced', 'largo'),
 		'type' 	=> 'heading');

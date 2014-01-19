@@ -29,7 +29,7 @@ class Blargo_Zone_Widget extends WP_Widget
          
         echo $before_widget;
 
-        if(trim($title));
+        if(trim($title))
             echo $before_title . $title. $after_title;
 
         if(blargo_is_setup())
