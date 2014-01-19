@@ -1,0 +1,46 @@
+/*
+ Theme Name:     Broadstreet's Largo
+ Theme URI:      http://example.com/twenty-fourteen-child/
+ Description:    An ad-friendly version of Largo with more layout options and styles, built by Broadstreet Ads and NJ News Commons
+ Author:         Broadstreet
+ Author URI:     http://broadstreetads.com
+ Template:       largo
+ Version:        1.0.0
+*/
+
+/*
+Features:
+    - Built-in Ad Zones
+    - Responsive styling of ads
+    - Better Layout Options (2x 2-column)
+    - Several Color Schemes
+    - Ad Zones for Story Page and category Page
+    - Font Selection
+
+*/
+
+/* First we need to import the stylesheet from the Largo parent theme */
+@import url("../largo/style.css");
+
+/* The above stylesheet provides barebones styling,
+   if you want all the fancy stuff (rounded corners, gradients, etc. from Twitter bootstrap,
+   uncomment the following line
+*/
+@import url("../largo/css/bootstrapify.css");
+
+/* Now you can add any of your custom styles below this line */
+
+.navbar-inner { 
+    border-radius: 0; 
+}
+
+aside.widget {
+    padding: 0;
+    border: none;
+}
+
+.widgettitle, .dropdown-menu {
+    border-radius: 0;
+}
+
+
