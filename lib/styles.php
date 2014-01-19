@@ -144,7 +144,7 @@ if(!function_exists('blargo_generate_styles')) {
             p { font-size: {$set['font_size_px']}px; color: {$set['content_font_color']} }
             .widgettitle, .stories h3.widgettitle { color: {$set['widget_header_font_color']}; background-color: {$set['widget_header_bg']}; }
             .blargo-zone { display: inline-block; max-width: 100%; text-align: center; }
-            .blargo-zone > span, .blargo-zone > span > a, .blargo-zone > span > img { display: inline-block; max-width: 99%; height: auto !important; }
+            .blargo-zone > span, .blargo-zone > span > a, .blargo-zone > span > img { display: inline-block; max-width: 100%; height: auto !important; }
             #blargo-header-ad { position: absolute; right: 10px; top: 30px; }
             @media (max-width: 900px) { #blargo-header-ad { display:none; position: static; right: 0; top: 0; display: block; padding: 10px; text-align: left; } }
             .blargo-monster-ad > .blargo-zone { display: block; background-color: #222; }
