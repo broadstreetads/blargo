@@ -31,7 +31,7 @@ if(!function_exists('blargo_generate_styles')) {
         # Background Image
         if($background)
             $styles .= "
-                body { background: url($background) center center no-repeat; background-attachment:fixed; background-size: 100%;}
+                body { background: url($background) top center no-repeat; background-attachment:fixed; background-size: 100%;}
             ";
         
         if($transparency !== '')
