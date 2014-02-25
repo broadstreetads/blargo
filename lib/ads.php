@@ -40,17 +40,17 @@ function blargo_ad_spots() {
         ),
         
         'auxiliary_1' => array (
-            'name' => 'A spare zone just in case you need it.',
+            'name' => 'Auxiliary Zone #1 (Rename)',
             'descripton' => 'An ad zone that can be used anywhere.'            
         ),
         
         'auxiliary_2' => array (
-            'name' => 'A spare zone just in case you need it.',
+            'name' => 'Auxiliary Zone #2 (Rename)',
             'descripton' => 'An ad zone that can be used anywhere.'                        
         ),
         
         'auxiliary_3' => array (
-            'name' => 'A spare zone just in case you need it.',
+            'name' => 'Auxiliary Zone #3 (Rename)',
             'descripton' => 'An ad zone that can be used anywhere.'           
         ),
         

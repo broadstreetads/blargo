@@ -110,6 +110,20 @@ if(!function_exists('blargo_generate_styles')) {
             ",
         );
         
+        $colors['full_red'] = array (
+            'widget_header_bg' => '#c52626',
+            //'widget_header_font_color' => '#333333',
+            'nav_sep' => 'red',
+            'nav_bg' => '#c52626',
+            'nav_active_bg' => '#ff0000',
+            'font_size_px' => '18',
+            'nav_font_size_px' => '17',
+            'link_color' => '#c52626',
+            'link_color_hover' => '#555',
+            'custom' => "                
+            ",
+        );
+        
         $colors['yellow'] = array (
             'widget_header_bg' => 'transparent',
             'widget_header_font_color' => '#333333',

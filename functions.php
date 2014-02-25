@@ -284,9 +284,9 @@ function blargo_in_story_code($attrs)
     $network_id = blargo_broadstreet_network_id();
 
     if(blargo_is_setup())
-        echo "<span class=\"blargo-zone\"><script>broadstreet.zone_alias($network_id, 'in-story', { uriKeywords: true, softKeywords: true })</script></span>";
+        return "<span class=\"blargo-zone\"><script>broadstreet.zone_alias($network_id, 'in-story', { uriKeywords: true, softKeywords: true })</script></span>";
     else
-        echo "Your Broadstreet account isn't set up yet! Click 'Ad Management' in the admin panel menu to get started.";   
+        return "Your Broadstreet account isn't set up yet! Click 'Ad Management' in the admin panel menu to get started.";   
 } 
 
 #add_filter('the_content', 'blargo_like_button', 1);
