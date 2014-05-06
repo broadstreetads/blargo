@@ -463,6 +463,7 @@ function optionsframework_options() {
 		'blue' 	=> __('Largo Blue (Default)', 'largo'),
         'blargo'=> __('Blargo Blue', 'largo'),
 		'gray' 	=> __('Dark Gray', 'largo'),
+        'green' => __('Village Green', 'largo'),
 		'red' 	=> __('Red', 'largo'),
         'full_red' 	=> __('Full Red', 'largo'),
 		'yellow'=> __('Yellow', 'largo')

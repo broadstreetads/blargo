@@ -109,6 +109,20 @@ if(!function_exists('blargo_generate_styles')) {
                 .widgettitle, .stories h3.widgettitle { border: none; }
             ",
         );
+
+        $colors['green'] = array (
+            'widget_header_bg' => 'rgb(138,199,73)',
+            //'widget_header_font_color' => '#333333',
+            'nav_sep' => 'rgb(138,199,73)',
+            'nav_bg' => 'rgb(138,199,73)',
+            'nav_active_bg' => 'rgb(187,216,64)',
+            'font_size_px' => '18',
+            'nav_font_size_px' => '17',
+            'link_color' => 'rgb(138,199,73)',
+            'link_color_hover' => 'rgb(187,216,64)',
+            'custom' => "                
+            ",
+        );
         
         $colors['full_red'] = array (
             'widget_header_bg' => '#c52626',
