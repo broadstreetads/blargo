@@ -33,7 +33,7 @@ class Blargo_Zone_Widget extends WP_Widget
             echo $before_title . $title. $after_title;
 
         if(blargo_is_setup())
-            echo "<span class=\"blargo-zone\"><script>broadstreet.zone_alias($network_id, '$zone_id', { uriKeywords: true, softKeywords: true })</script></span>";
+            echo "<span class=\"blargo-zone\"><script>broadstreet.zone_alias($network_id, '$zone_id', { uriKeywords: true, softKeywords: true, responsive: true})</script></span>";
         else
             echo "Your Broadstreet account isn't set up yet! Click 'Ad Management' in the admin panel menu to get started.";
         
@@ -151,7 +151,7 @@ class Blargo_Category_Keyword_Zone_Widget extends WP_Widget
             echo $before_title . $title. $after_title;
 
         if(blargo_is_setup())
-            echo "<span class=\"blargo-zone\"><script>broadstreet.zone_alias($network_id, '$zone_id', { keywords: [$keywords_string], softKeywords: true })</script></span>";
+            echo "<span class=\"blargo-zone\"><script>broadstreet.zone_alias($network_id, '$zone_id', { keywords: [$keywords_string], softKeywords: true, responsive: true})</script></span>";
         else
             echo "Your Broadstreet account isn't set up yet! Click 'Ad Management' in the admin panel menu to get started.";
         
