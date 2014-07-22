@@ -289,7 +289,49 @@ function blargo_in_story_code($attrs)
         return "Your Broadstreet account isn't set up yet! Click 'Ad Management' in the admin panel menu to get started.";   
 } 
 
+/**
+ * Get category slugs for use in keyword-dropping
+ * @return type
+ */
+function blargo_get_category_slugs() {
+    global $post;
+    
+    $slugs = array();
+    
+    if(is_single()) {
+        
+        $id = get_the_ID();
+        $cats = wp_get_post_categories($id);      
+
+        foreach($cats as $cat){
+            $c = get_category($cat);
+            $slugs[] = $c->slug;
+        }
+        
+        $slugs[] = $post->post_name;
+    }   
+    
+    if(is_page()) {
+        $slugs[] = $post->post_name;
+    }   
+    
+    if(is_category() || is_archive()) {
+        $cat = get_query_var('cat');
+        $cat = get_category ($cat);
+        $slugs[] = $cat->slug;
+    }
+    
+    if(is_home()) {
+        // No categories
+        $slugs = array();
+    }
+
+    return $slugs;
+}
+
 #add_filter('the_content', 'blargo_like_button', 1);
 add_shortcode('ad', 'blargo_in_story_code');
 add_action('wp_head', 'blargo_generate_styles');
 add_action('init', 'blargo_broadstreet_cdn');
+
+add_action('wp_head', 'blargo_get_category_slugs');
